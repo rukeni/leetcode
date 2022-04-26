@@ -12,7 +12,6 @@
 var getDecimalValue = function(head) {
   const result = [];
   while(head.next !== null) {
-    console.log(head.val)
     result.push(head.val);
     head = head.next;
   }
