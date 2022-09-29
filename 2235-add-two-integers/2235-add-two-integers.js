@@ -3,6 +3,6 @@
  * @param {number} num2
  * @return {number}
  */
-var sum = function(a, b) {
-  return a + b
+function sum (a, b) {
+  return a + b;
 }
