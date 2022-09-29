@@ -3,4 +3,6 @@
  * @param {number} num2
  * @return {number}
  */
-var sum = (num1, num2) => num1 + num2
+var sum = function(a, b) {
+  return a + b
+}
