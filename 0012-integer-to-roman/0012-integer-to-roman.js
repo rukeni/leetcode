@@ -3,72 +3,39 @@
  * @return {string}
  */
 var intToRoman = function(num) {
+  
     let answer = '';
   
-    while (num >= 1000) {
-      num -= 1000;
-      answer += 'M';
+    const numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  
+    const digit = {
+      '1000': 'M',
+      '900': 'CM',
+      '500': 'D',
+      '400': 'CD',
+      '100': 'C',
+      '90': 'XC',
+      '50': 'L',
+      '40': 'XL',
+      '10': 'X',
+      '9': 'IX',
+      '5': 'V',
+      '4': 'IV',
+      '1': 'I'
+    };
+  
+    const keys = Object.keys(digit);
+  
+    for(let i = 0; i < numbers.length; i++) {
+      const value = numbers[i];
+      
+      while(value <= num) {
+        num -= value;
+        answer += digit[value];
+      }
     }
   
-    while (num >= 900) {
-      num -= 900;
-      answer += 'CM';
-    }
-  
-    while (num >= 500) {
-      num -= 500;
-      answer += 'D';
-    }
-  
-    while (num >= 400) {
-      num -= 400;
-      answer += 'CD';
-    }
-  
-    while (num >= 100) {
-      num -= 100;
-      answer += 'C';
-    }
-  
-    while (num >= 90) {
-      num -= 90;
-      answer += 'XC';
-    }
-  
-    while (num >= 50) {
-      num -= 50;
-      answer += 'L';
-    }
-  
-    while (num >= 40) {
-      num -= 40;
-      answer += 'XL';
-    }
-  
-    while (num >= 10) {
-      num -= 10;
-      answer += 'X';
-    }
-  
-    while (num >= 9) {
-      num -= 9;
-      answer += 'IX';
-    }
-  
-    while (num >= 5) {
-      num -= 5;
-      answer += 'V';
-    }
-  
-    while (num >= 4) {
-      num -= 4;
-      answer += 'IV';
-    }
-  
-    while (num >= 1) {
-      num -= 1;
-      answer += 'I';
-    }
+    
   
     return answer;
 
